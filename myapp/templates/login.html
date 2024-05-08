@@ -1,0 +1,14 @@
+def login(request):
+    if request.method == 'POST':
+        # Aquí manejas la lógica de verificación después de que el usuario envíe el formulario
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        
+        # Aquí añadirías la lógica para verificar las credenciales del usuario
+        if email == "usuario@example.com" and password == "contraseña":
+            return HttpResponse("<h1>Bienvenido/a</h1>")
+        else:
+            return HttpResponse("<h1>Error en la autenticación</h1>", status=401)
+    else:
+        # Si no es una petición POST, simplemente renderizamos el formulario de inicio de sesión
+        return render(request, 'login.html')
