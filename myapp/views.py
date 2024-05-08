@@ -1,16 +1,24 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
 from django.urls import path
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login as auth_login
 
-# es una vista
-
+"""# es una vista
 def login(request):
-    # Tu lógica de login aquí
-    return render(request, 'login.html')
+    return HttpResponse(request, 'login.html')
 
 def hello(request): 
-    return HttpResponse("<h1>Hello World</h1>")
+    return HttpResponse(request, 'login.html')
+
+def about(request):
+    return HttpResponse('About')"""
+
+# es una vista
+def login(request):
+    return HttpResponse(request, 'login.html')
+
+def hello(request):
+    return HttpResponse(request, 'login.html')
 
 def about(request):
     return HttpResponse('About')
