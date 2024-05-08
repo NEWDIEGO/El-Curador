@@ -10,4 +10,5 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('', include('django.contrib.auth.urls')),  # Incluye las URLs de autenticación
     path('', views.hello, name='home'),
+    
 ]

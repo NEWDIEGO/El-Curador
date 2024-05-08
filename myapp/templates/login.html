@@ -1,20 +1,6 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-    <h2>Iniciar sesión</h2>
-    <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="password">Contraseña:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Iniciar sesión</button>
-    </form>
-</body>
-</html>
+from django.urls import path
+from .views import user_login
+
+urlpatterns = [
+    path('login/', user_login, name='login'),
+]
