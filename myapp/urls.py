@@ -7,8 +7,7 @@ urlpatterns = [
 ]
 """
 urlpatterns = [
-    path('login/', views.login, name='login'),
+    path('login/', views.login_view, name='login'),
     path('', include('django.contrib.auth.urls')),  # Incluye las URLs de autenticación
     path('', views.hello, name='home'),
-    
 ]

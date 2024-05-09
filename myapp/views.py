@@ -14,14 +14,14 @@ def about(request):
     return HttpResponse('About')"""
 
 # es una vista
-def login(request):
-    return JsonResponse(request, 'login.html')
+def login_view(request):
+    return render(request, 'login.html')
 
 def hello(request):
     return HttpResponse("Bienvenidos a la clinica EL CURADOR")
 
 def about(request):
-    return HttpResponse('About')
+    return render('About')
 
 def user_login(request):
     return render(request, 'myapp/login.html')
