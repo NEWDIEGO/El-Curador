@@ -1,27 +1,18 @@
-from django.http import HttpResponse, JsonResponse
-from django.shortcuts import render, redirect
-from django.urls import path
-from django.contrib.auth import authenticate, login as auth_login
+from django.shortcuts import render
+from django.http import HttpResponse
 
-"""# es una vista
-def login(request):
-    return HttpResponse(request, 'login.html')
-
-def hello(request): 
-    return HttpResponse(request, 'login.html')
-
-def about(request):
-    return HttpResponse('About')"""
-
-# es una vista
 def login_view(request):
+    # Asegúrate de que 'login.html' se encuentra en la carpeta 'templates' dentro de alguna app o en una ubicación que Django reconozca.
     return render(request, 'login.html')
 
 def hello(request):
-    return HttpResponse("Bienvenidos a la clinica EL CURADOR")
+    # Retorna un mensaje simple usando HttpResponse.
+    return HttpResponse("Bienvenidos a la clínica EL CURADOR")
 
 def about(request):
-    return render('About')
+    # Para un texto simple, sigue usando HttpResponse.
+    return HttpResponse('About')
 
 def user_login(request):
+    # Asegúrate de que 'myapp/login.html' se encuentra en la carpeta 'templates/myapp' dentro de tu proyecto.
     return render(request, 'myapp/login.html')
