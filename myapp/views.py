@@ -16,3 +16,12 @@ def about(request):
 def user_login(request):
     # Asegúrate de que 'myapp/login.html' se encuentra en la carpeta 'templates/myapp' dentro de tu proyecto.
     return render(request, 'myapp/login.html')
+
+def register(request):
+    return render(request, 'register.html')
+
+def process_registration(request):
+    if request.method == 'POST':
+        local_part = request.POST['correo']
+        domain = request.POST['dominio']
+        full_email = local_part + domain

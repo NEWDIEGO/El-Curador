@@ -1,6 +1,221 @@
-<h2>Regístrate</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrar</button>
-</form>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 280px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -140px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+    <script>
+        // Función para verificar todas las validaciones antes de enviar el formulario
+        function validateForm() {
+            var errores = [];
+            var fechaNacimiento = document.getElementById('fechaNacimiento').value;
+            var genero = document.getElementById('genero').value;
+            var contraseña = document.getElementById('contraseña').value;
+            var confirmarContraseña = document.getElementById('confirmarContraseña').value;
+
+            // Validación de la edad
+            if (!validateAge(fechaNacimiento)) {
+                errores.push('Debe tener al menos 18 años para registrarse.');
+            }
+
+            // Validación de género
+            if (genero === "") {
+                errores.push('Ingrese la opción de género.');
+            }
+
+            // Validación de coincidencia de contraseñas
+            if (contraseña !== confirmarContraseña) {
+                errores.push('Las contraseñas no coinciden');
+            }
+
+            if (errores.length > 0) {
+                alert('Errores encontrados:\n' + errores.join('\n'));
+                return false;
+            }
+
+            alert('Usuario registrado correctamente.');
+            return true;
+        }
+        
+        function checkAge() {
+            var dob = new Date(document.getElementById('fechaNacimiento').value);
+            var today = new Date();
+            var age = today.getFullYear() - dob.getFullYear();
+            var m = today.getMonth() - dob.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+
+            // Si el usuario tiene menos de 18 años, deshabilitar el botón de registro
+            if (age < 18) {
+                document.getElementById('registerBtn').disabled = true;
+                alert("Debe tener al menos 18 años para registrarse.");
+            } else {
+                document.getElementById('registerBtn').disabled = false;
+            }
+        }
+        
+function formatRUT() {
+    var input = document.getElementById('rut');
+    var rut = input.value.replace(/\D/g, ''); // Eliminar cualquier carácter no numérico
+
+    if (rut.length > 9) {
+        rut = rut.slice(0, 9); // Asegurar que el RUT no exceda el largo máximo
+    }
+
+    var formatted = [];
+    if (rut.length > 2) {
+        formatted.push(rut.substring(0, 2)); // Añadir los primeros dos dígitos
+    }
+    if (rut.length > 5) {
+        formatted.push(rut.substring(2, 5)); // Añadir los siguientes tres dígitos
+    }
+    if (rut.length > 8) {
+        formatted.push(rut.substring(5, 8)); // Añadir los siguientes tres dígitos
+        formatted.push(rut.substring(8));    // Añadir el dígito verificador
+    } else if (rut.length > 5) {
+        formatted.push(rut.substring(5));   // Añadir el resto si no se completa el siguiente grupo de tres
+    }
+
+    // Unir con puntos y cambiar el último punto por un guión
+    input.value = formatted.join('.');
+    if (input.value.includes('.') && rut.length > 8) {
+        input.value = input.value.replace(/\.(?=[^.]*$)/, '-'); 
+    }
+        function validateForm() {
+            var contraseña = document.getElementById('contraseña').value;
+            var confirmarContraseña = document.getElementById('confirmarContraseña').value;
+
+            // Verificar que las contraseñas coincidan
+            if (contraseña !== confirmarContraseña) {
+                alert('Las contraseñas no coinciden');
+                return false;
+            }
+
+            // Verificar que el usuario tenga al menos 18 años
+            var fechaNacimiento = new Date(document.getElementById('fechaNacimiento').value);
+            var hoy = new Date();
+            var edad = hoy.getFullYear() - fechaNacimiento.getFullYear();
+            var m = hoy.getMonth() - fechaNacimiento.getMonth();
+            if (m < 0 || (m === 0 && hoy.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+            if (edad < 18) {
+                alert('Debe tener al menos 18 años de edad');
+                return false;
+            }
+
+            // Si todo está correcto, mostrar mensaje y enviar formulario
+            alert('Paciente Registrado');
+            return true;
+        }
+        function validateAge(dob) {
+            var birthDate = new Date(dob);
+            var today = new Date();
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            return age >= 18;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ingrese sus datos</h1>
+    <form action="/submit-form" method="post" onsubmit="return validateForm()">
+        <label for="rut">RUT:</label>
+        <input type="text" id="rut" name="rut" oninput="formatRUT()" placeholder="12.345.678-9" pattern="\d{2}\.\d{3}\.\d{3}-[0-9kK]" title="Ingrese un RUT en el formato 12.345.678-K" required>
+        <br><br>
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="20" required>
+        <br><br>
+
+        <label for="apellidoPaterno">Apellido Paterno:</label>
+        <input type="text" id="apellidoPaterno" name="apellidoPaterno" maxlength="10" required>
+        <br><br>
+
+        <label for="apellidoMaterno">Apellido Materno:</label>
+        <input type="text" id="apellidoMaterno" name="apellidoMaterno" maxlength="10" required>
+        <br><br>
+
+        <label for="correo">Correo:</label>
+        <input type="text" id="correo" name="correo" required> 
+        <select id="dominio" name="dominio" required>
+            <option value="@hotmail.com">Tipo de correo</option>
+            <option value="@hotmail.com">@hotmail.com</option>
+            <option value="@gmail.com">@gmail.com</option>
+            <option value="@duocuc.cl">@duocuc.cl</option>
+        </select>
+        <br><br>
+
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" name="contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Debe contener al menos 10 caracteres, incluyendo un número, un símbolo y una mayúscula" required>
+        <div class="tooltip">?
+            <span class="tooltiptext">La contraseña debe contener al menos 10 caracteres, incluyendo al menos un número, un símbolo y una letra mayúscula.</span>
+        </div>
+        <br><br>
+
+        <label for="confirmarContraseña">Confirmar Contraseña:</label>
+        <input type="password" id="confirmarContraseña" name="confirmarContraseña" required>
+        <br><br>
+
+        <label for="telefono">Celular:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="912345678" pattern="[0-9]{9}" required>
+        <br><br>
+
+        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento" onchange="checkAge()" required>
+        <br><br>
+
+        <label for="genero">Género:</label>
+        <select id="genero" name="genero" required>
+            <option value="">Seleccionar</option>
+            <option value="masculino">Masculino</option>
+            <option value="femenino">Femenino</option>
+            <option value="otro">Otro</option>
+        </select>
+        <br><br>
+
+        <button type="submit">Registrar</button>
+        <button type="reset">Limpiar</button>
+        <button type="button" onclick="history.back();">Volver</button>
+    </form>
+</body>
+</html>

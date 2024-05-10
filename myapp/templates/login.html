@@ -1,3 +1,6 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">  
+</head>
 <body class="bg-zinc-200 flex items-center justify-center h-screen">
   <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
     <h1 class="text-2xl font-bold mb-6 text-center">Bienvenidos a la clínica "El Curador"</h1>
@@ -31,11 +34,9 @@
         >
           Aceptar
         </button>
-        <button
-          class="bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="button"
-        >
+        <a href="{% url 'register' %}" class="inline-block bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-center">
           Registrarse
+        </a>
         </button>
       </div>
       <p class="text-center text-zinc-500 text-xs">
