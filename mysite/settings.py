@@ -14,6 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+template_dir = BASE_DIR / 'myapp' / 'templates'
+print("La ruta a la carpeta de templates es:", template_dir)
 
 
 # Quick-start development settings - unsuitable for production
@@ -54,9 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / 'myapp' / 'templates',  # Ruta específica a la carpeta de templates en 'myapp'
-        ],
+        'DIRS': [template_dir],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
