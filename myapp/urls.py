@@ -1,14 +1,10 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
-"""
-urlpatterns = [
-    path('login/', views.login, name='login'),
-    path('', views.hello, name='home'),  # Esto manejará la ruta raíz
-]
-"""
+
 urlpatterns = [
     path('login/', views.login_view, name='login'),
+    path('login/', views.custom_login, name='login'),
     path('', include('django.contrib.auth.urls')),  # Incluye las URLs de autenticación
     path('', views.login_view, name='home'),
     path('register/', views.register, name='register'),
@@ -17,4 +13,6 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
     path('paciente_login/', views.paciente_login, name='paciente_login'),
+    path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
+    path('especialista_dashboard/', views.especialista_dashboard, name='especialista_dashboard'),
 ]
