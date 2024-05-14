@@ -25,3 +25,6 @@ def process_registration(request):
         local_part = request.POST['correo']
         domain = request.POST['dominio']
         full_email = local_part + domain
+
+def paciente_login(request):
+    return render(request, 'PacienteLogin.html')
