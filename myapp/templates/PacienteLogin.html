@@ -7,8 +7,9 @@
 </head>
 <body>
     <h1>Bienvenido Paciente</h1>
-
-    <button type="button">Ver Perfil</button>
+    <a href="{% url 'PacientePerfil' %}">
+        <button type="button">Ver Perfil</button>
+    </a>
     <button type="button">Reservar Hora</button>
     <a href="{% url 'PacienteReserva' %}">
         <button>Ver mis Reservas</button>

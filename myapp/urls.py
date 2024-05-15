@@ -12,8 +12,11 @@ urlpatterns = [
     path('reset_password_sent/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'), name='password_reset_complete'),
-    path('PacienteLogin/', views.paciente_dashboard, name='PacienteLogin'),
+    path('paciente_login/', views.paciente_login, name='paciente_login'),
     path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
-    path('paciente_reserva/', views.paciente_reserva, name='PacienteReserva'),
     path('especialista_dashboard/', views.especialista_dashboard, name='especialista_dashboard'),
+    path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
+    path('paciente_dashboard/', views.paciente_dashboard, name='PacienteLogin'),
+    path('paciente_reserva/', views.paciente_reserva, name='PacienteReserva'),
+    path('paciente_perfil/', views.PacientePerfil, name='PacientePerfil'),
 ]

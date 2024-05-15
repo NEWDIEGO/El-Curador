@@ -94,3 +94,8 @@ def especialista_dashboard(request):
 @login_required
 def paciente_reserva(request):
     return render(request, 'PacienteReserva.html')
+
+@login_required
+def PacientePerfil(request):
+    # Aquí puedes pasar los datos del perfil del usuario si es necesario
+    return render(request, 'PacientePerfil.html')

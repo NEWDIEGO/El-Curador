@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 600px;
+        }
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            background-color: #ddd;
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .profile-info {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .back-button {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil Usuario</h1>
+        <div class="profile">
+            <div class="profile-picture"></div>
+            <div class="profile-info">
+                <p>Nombre Completo</p>
+                <p>Fecha de Nacimiento</p>
+                <p>Correo Electrónico</p>
+                <p>Género</p>
+                <p>Comentario:</p>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="back-button">
+            <button>Volver</button>
+        </a>
+    </div>
+</body>
+</html>
