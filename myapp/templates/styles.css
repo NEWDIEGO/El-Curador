@@ -1,0 +1,99 @@
+body {
+    background-color: #f0f4f8; /* Cambia este valor al color de fondo que prefieras */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: #ffffff; /* bg-white */
+    padding: 32px; /* p-8 */
+    border-radius: 8px; /* rounded-lg */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    max-width: 448px; /* max-w-md */
+    width: 100%; /* w-full */
+}
+
+h1 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold; /* font-bold */
+    margin-bottom: 24px; /* mb-6 */
+    text-align: center;
+}
+
+label {
+    color: #4b5563; /* text-zinc-700 */
+    font-size: 0.875rem; /* text-sm */
+    font-weight: bold; /* font-bold */
+    margin-bottom: 8px; /* mb-2 */
+    display: block; /* block */
+}
+
+input {
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1); /* shadow */
+    border: 1px solid #d1d5db; /* border */
+    border-radius: 4px; /* rounded */
+    width: 100%; /* w-full */
+    padding: 8px 12px; /* py-2 px-3 */
+    color: #4b5563; /* text-zinc-700 */
+    margin-bottom: 24px; /* mb-3 */
+}
+
+button, .btn {
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: #ffffff; /* text-white */
+    font-weight: bold; /* font-bold */
+    padding: 8px 16px; /* py-2 px-4 */
+    border-radius: 4px; /* rounded */
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+}
+
+button:hover, .btn:hover {
+    background-color: #2563eb; /* hover:bg-blue-700 */
+}
+
+.button-secondary {
+    background-color: #e5e7eb; /* bg-zinc-300 */
+    color: #374151; /* text-zinc-800 */
+}
+
+.button-secondary:hover {
+    background-color: #d1d5db; /* hover:bg-zinc-400 */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+}
+
+.text-blue-500 {
+    color: #3b82f6;
+}
+
+.text-blue-500:hover {
+    color: #2563eb;
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}

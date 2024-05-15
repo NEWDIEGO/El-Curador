@@ -10,7 +10,9 @@
 
     <button type="button">Ver Perfil</button>
     <button type="button">Reservar Hora</button>
-    <button type="button">Ver mis Reservas</button>
+    <a href="{% url 'PacienteReserva' %}">
+        <button>Ver mis Reservas</button>
+    </a>
     <button type="button">Anular Hora</button>
     <button type="button" onclick="history.back();">Cerrar Sesión</button>
 

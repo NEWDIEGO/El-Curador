@@ -8,7 +8,6 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth import login
 
-
 def login_view(request):
     # Asegúrate de que 'login.html' se encuentra en la carpeta 'templates' dentro de alguna app o en una ubicación que Django reconozca.
     return render(request, 'login.html')
@@ -91,3 +90,7 @@ def paciente_dashboard(request):
 @login_required
 def especialista_dashboard(request):
     return render(request, 'EspecialistaLogin.html')
+
+@login_required
+def paciente_reserva(request):
+    return render(request, 'PacienteReserva.html')
