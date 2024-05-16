@@ -1,6 +1,10 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
+from .views import register
+from .views import login_view
+from myapp.views import user_login
+from myapp.views import custom_login
 
 urlpatterns = [
     path('login/', views.login_view, name='login'),
@@ -19,4 +23,9 @@ urlpatterns = [
     path('paciente_dashboard/', views.paciente_dashboard, name='PacienteLogin'),
     path('paciente_reserva/', views.paciente_reserva, name='PacienteReserva'),
     path('paciente_perfil/', views.PacientePerfil, name='PacientePerfil'),
+    path('especialista/', views.especialista, name='especialista'),
+    path('EspecialistaPerfil/', views.especialista_perfil, name='EspecialistaPerfil'),
+    path('EspecialistaLista/', views.especialista_lista, name='EspecialistaLista'),
+    path('login/', login_view, name='login'),
+    path('login/', custom_login, name='login'),
 ]

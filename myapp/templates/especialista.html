@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista</title>
+</head>
+<body>
+    <header>
+        <div>
+            <H1>Inicio</H1>
+        </div>
+    </header>
+        <section class="wrapper">
+            <section class="main">
+                <nav>
+                    <ul>
+                        <a href="{% url 'EspecialistaPerfil' %}" class="bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Ver Perfil
+                        </a>
+                        <a href="{% url 'EspecialistaLista' %}" class="bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Lista de Espera
+                        </a>
+                        <button type="button" onclick="history.back();">Cerrar Sesión</button>
+                    </ul>
+                </nav>
+            </section>    
+        </section>
+
+        
+        
+</body>
+<footer>
+    <p>Footer de ejemplo</p>
+</footer>
+</html>
