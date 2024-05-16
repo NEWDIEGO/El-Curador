@@ -3,7 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            font-family: Arial, sans-serif; /* Asegura una tipografía limpia y profesional */
+            background-color: #f4f4f4; /* Color de fondo suave */
+            padding: 20px; /* Espaciado alrededor del contenido para evitar que toque los bordes del navegador */
+        }
+    
+        .container {
+            max-width: 600px; /* Limita el ancho del formulario para una mejor lectura */
+            margin: auto; /* Centra el formulario horizontalmente */
+            background: white; /* Fondo blanco para el formulario */
+            padding: 20px; /* Espaciado interno */
+            border-radius: 8px; /* Bordes redondeados */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra sutil */
+        }
+    
+        input[type="text"], input[type="password"], input[type="email"], select {
+            width: 100%; /* Hace que los campos ocupen todo el ancho disponible */
+            padding: 8px; /* Añade un poco de padding para hacer más fácil la escritura */
+            margin: 8px 0; /* Añade espacio entre los campos */
+            display: inline-block; /* Asegura que el campo se alinee correctamente */
+            border: 1px solid #ccc; /* Borde sutil */
+            box-sizing: border-box; /* El ancho incluirá el padding y border */
+            border-radius: 4px; /* Bordes ligeramente redondeados para los campos de entrada */
+        }
+    
+        button {
+            background-color: #4CAF50; /* Color de fondo para el botón, verde estándar */
+            color: white; /* Texto en blanco para contraste */
+            padding: 14px 20px; /* Padding generoso para hacer el botón más táctil */
+            margin: 8px 0; /* Espacio arriba y abajo del botón */
+            border: none; /* Sin borde */
+            cursor: pointer; /* Cursor en forma de mano al pasar el mouse */
+            width: 100%; /* Ancho completo */
+            border-radius: 4px; /* Bordes redondeados */
+        }
+    
+        button:hover {
+            background-color: #45a049; /* Un verde un poco más oscuro al pasar el mouse */
+        }
+    
         .tooltip {
             position: relative;
             display: inline-block;
@@ -49,10 +90,10 @@
                 age--;
             }
             if (age < 18) {
-                document.getElementById('registerBtn').disabled = true;
+                document.getElementById('registrar').disabled = true;
                 alert("Debe tener al menos 18 años para registrarse.");
             } else {
-                document.getElementById('registerBtn').disabled = false;
+                document.getElementById('registrar').disabled = false;
             }
         }
 
@@ -108,13 +149,13 @@
 </head>
 <body>
     <h1>Ingrese sus datos</h1>
-    <form action="{% url 'register' %}" method="post" onsubmit="return validateForm()">
+    <form action="{% url 'registrar' %}" method="post" onsubmit="return validateForm()">
         {% csrf_token %}
         <label for="rut">RUT:</label>
         <input type="text" id="rut" name="rut" oninput="formatRUT()" placeholder="01.234.567-8" required>
         <br><br>
 
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Nombres:</label>
         <input type="text" id="nombre" name="nombre" maxlength="20" required>
         <br><br>
 
@@ -126,15 +167,12 @@
         <input type="text" id="apellidoMaterno" name="apellidoMaterno" maxlength="10" required>
         <br><br>
 
-        <label for="correo">Correo:</label>
+        <label for="correo">Correo Electronico:</label>
         <input type="email" id="correo" name="correo" required>
         <br><br>
 
-        <label for="contraseña">Contraseña:</label>
+        <label for="contraseña">Contraseña: Debe contener al menos 10 caracteres, incluyendo al menos un número, un símbolo y una letra mayúscula.</label>
         <input type="password" id="contraseña" name="contraseña" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{10,}" title="Debe contener al menos 10 caracteres, incluyendo un número, un símbolo y una mayúscula" required>
-        <div class="tooltip">?
-            <span class="tooltiptext">La contraseña debe contener al menos 10 caracteres, incluyendo al menos un número, un símbolo y una letra mayúscula.</span>
-        </div>
         <br><br>
 
         <label for="confirmarContraseña">Confirmar Contraseña:</label>
@@ -158,7 +196,7 @@
         </select>
         <br><br>
 
-        <button type="submit" id="registerBtn">Registrar</button>
+        <button type="submit" id="registrarBtn">Registrar</button>
         <button type="reset">Limpiar</button>
         <button type="button" onclick="history.back();">Volver</button>
     </form>

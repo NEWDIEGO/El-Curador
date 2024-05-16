@@ -9,6 +9,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import login
 from django.contrib import messages
 from django.db import IntegrityError
+from django.apps import AppConfig
 
 def login_view(request):
     # Asegúrate de que 'login.html' se encuentra en la carpeta 'templates' dentro de alguna app o en una ubicación que Django reconozca.
@@ -28,7 +29,7 @@ def user_login(request):
 
 
 
-def register(request):
+def registrar(request):
     if request.method == 'POST':
         rut = request.POST['rut']
         nombre = request.POST['nombre']
@@ -58,7 +59,7 @@ def register(request):
         # Iniciar sesión y redirigir
         login(request, user)
         return redirect('login')  # Esto redirige al login después de registrarse
-    return render(request, 'register.html')
+    return render(request, 'registrar.html')
 
 def process_registration(request):
     if request.method == 'POST':
@@ -112,7 +113,7 @@ def especialista_perfil(request):
 def especialista_lista(request):
     return render(request, 'especialistalista.html')
 
-def register(request):
+def registrar(request):
     if request.method == 'POST':
         username = request.POST['correo']
         password = request.POST['contraseña']
@@ -130,7 +131,7 @@ def register(request):
         except Exception as e:
             messages.error(request, 'Error al registrar usuario: {}'.format(e))  # Agrega un mensaje de error
 
-    return render(request, 'register.html')
+    return render(request, 'registrar.html')
 
 def login_view(request):
     if request.method == 'POST':
@@ -175,3 +176,15 @@ def create_default_user():
         print("Usuario creado exitosamente.")
     except IntegrityError as e:
         print(f"No se pudo crear el usuario debido a: {e}")
+
+class TuAppConfig(AppConfig):
+    name = 'tu_app'
+
+    def ready(self):
+        from . import signals  # importa tus señales si las usas
+        self.create_default_user()
+
+    @staticmethod
+    def create_default_user():
+        if not User.objects.filter(username='paciente').exists():
+            User.objects.create_user('paciente', 'paciente@gmail.com', 'Holamundo-123')
