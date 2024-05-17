@@ -5,7 +5,6 @@ from .views import registrar
 from .views import login_view
 from myapp.views import user_login
 from myapp.views import custom_login
-from .admin import admin_site
 
 urlpatterns = [
     path('login/', views.login_view, name='login'),
@@ -29,5 +28,4 @@ urlpatterns = [
     path('EspecialistaLista/', views.especialista_lista, name='EspecialistaLista'),
     path('login/', login_view, name='login'),
     path('login/', custom_login, name='login'),
-    path('admin/', admin_site.urls),
 ]
