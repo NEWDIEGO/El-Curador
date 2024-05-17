@@ -45,3 +45,11 @@ $.ajaxSetup({
         }
     }
 });
+
+function limpiarFormulario() {
+    document.querySelector('form').reset();
+}
+
+function volver() {
+    window.history.back();
+}

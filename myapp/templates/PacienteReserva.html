@@ -2,185 +2,72 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Reserva de Paciente</title>
+    <title>Reserva de cita</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'scripts.js' %}"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #d3d3d3;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
         }
-        .container {
-            background-color: #f9f9f9;
+        
+        form {
+            max-width: 600px;
+            margin: 50px auto;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .toolbar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        .toolbar select,
-        .toolbar button {
-            padding: 5px;
-            margin: 0 5px;
-        }
-        .calendar {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .calendar th,
-        .calendar td {
+            background: white;
             border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
         }
-        .calendar th {
-            background-color: #eee;
+        
+        input[type="radio"] {
+            margin-right: 10px;
         }
-        .highlight {
-            background-color: #add8e6;
+        
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
         }
-        .bottom-toolbar {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-        .bottom-toolbar button {
-            padding: 5px 10px;
+        
+        button:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="toolbar">
-            <div>
-                <button>&lt;&lt;</button>
-                <button>&gt;&gt;</button>
-                <button>Today</button>
-            </div>
-            <div>
-                <select>
+        <h1>Reserva tu cita</h1>
+        <form action="/reservarCita" method="post">
+            <div class="especialistas">
+                <select name="especialista">
                     <option value="medicina_general">Medicina General</option>
                     <option value="nutricionista">Nutricionista</option>
                     <option value="dentista">Dentista</option>
                 </select>
             </div>
-        </div>
-        <table class="calendar">
-            <thead>
-                <tr>
-                    <th>Sunday</th>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>08:00</td>
-                    <td>Camila</td>
-                    <td></td>
-                    <td>Lucas</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>09:00</td>
-                    <td>Susana</td>
-                    <td>Camila</td>
-                    <td></td>
-                    <td></td>
-                    <td>Ivan</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>10:00</td>
-                    <td>Susana</td>
-                    <td>Valentina</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Ivan</td>
-                </tr>
-                <tr>
-                    <td>11:00</td>
-                    <td>Miguel</td>
-                    <td>Camila</td>
-                    <td>Valentina</td>
-                    <td></td>
-                    <td>Diego</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>12:00</td>
-                    <td>Miguel</td>
-                    <td>Camila</td>
-                    <td>Valentina</td>
-                    <td></td>
-                    <td>Diego</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>13:00</td>
-                    <td></td>
-                    <td>Lucas</td>
-                    <td></td>
-                    <td></td>
-                    <td>Jose</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>14:00</td>
-                    <td>Pedro</td>
-                    <td>Lucas</td>
-                    <td></td>
-                    <td>Carlos</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>15:00</td>
-                    <td>Pedro</td>
-                    <td></td>
-                    <td>Lucas</td>
-                    <td></td>
-                    <td>Jose</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>16:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>Carlos</td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>17:00</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-        <div class="bottom-toolbar">
-            <button>Agendar Hora</button>
-        </div>
-        <div style="text-align: right; margin-top: 10px;">
-            <button onclick="window.history.back();">&lt;&lt; Volver</button>
-        </div>
+            <div class="calendario">
+                <!-- Aquí iría tu calendario, posiblemente necesites JavaScript o un plugin -->
+            </div>
+            <div class="horarios">
+                <input type="radio" id="hora1" name="hora" value="9:00">
+                <label for="hora1">9:00</label>
+                <input type="radio" id="hora2" name="hora" value="12:00">
+                <label for="hora2">12:00</label>
+                <input type="radio" id="hora3" name="hora" value="15:00">
+                <label for="hora3">15:00</label>
+                <input type="radio" id="hora4" name="hora" value="18:00">
+                <label for="hora4">18:00</label>
+            </div>
+            <div class="acciones">
+                <button type="submit">Aceptar</button>
+                <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+                <button type="button" onclick="volver()">Cancelar</button>
+            </div>
+        </form>
     </div>
+    <script src="scripts.js"></script>
 </body>
 </html>
