@@ -19,7 +19,6 @@ urlpatterns = [
     path('paciente_login/', views.paciente_login, name='paciente_login'),
     path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
     path('especialista_dashboard/', views.especialista_dashboard, name='especialista_dashboard'),
-    path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
     path('paciente_dashboard/', views.paciente_dashboard, name='PacienteLogin'),
     path('paciente_reserva/', views.paciente_reserva, name='PacienteReserva'),
     path('paciente_perfil/', views.PacientePerfil, name='PacientePerfil'),

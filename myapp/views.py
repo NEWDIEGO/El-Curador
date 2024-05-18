@@ -72,7 +72,7 @@ def paciente_login(request):
 
 def custom_login(request):
     if request.method == 'POST':
-        username = request.POST['username']
+        username = request.POST['correo']
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
@@ -135,15 +135,18 @@ def registrar(request):
 
 def login_view(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = authenticate(request, username=email, password=password)
+
         if user is not None:
             login(request, user)
-            return redirect('PacienteLogin')  # Cambia esto por el nombre de la URL del dashboard de pacientes
+            return redirect('PacienteLogin')  # Redirige a la página de perfil del paciente
         else:
-            messages.error(request, "Correo y/o contraseña inválidas")
-    return render(request, 'login.html')
+            # Si no hay usuario, o la contraseña no coincide
+            return render(request, 'login.html', {'error': 'Correo electrónico o contraseña incorrecta'})
+    else:
+        return render(request, 'login.html')
 
 def create_default_user():
     # Intenta obtener el usuario si existe, o crea uno nuevo si no existe
@@ -166,7 +169,7 @@ create_default_user()
 
 def create_default_user():
     if not User.objects.filter(username='paciente').exists():
-        User.objects.create_user('paciente', 'paciente@gmail.com', 'Holamundo-123')
+        User.objects.create_user('paciente', 'gmail.com', 'Holamundo-123')
     else:
         print("El usuario ya existe.")
 

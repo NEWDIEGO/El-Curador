@@ -125,6 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/myapp/'
 STATICFILES_DIRS = [BASE_DIR / 'myapp']
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -137,3 +138,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+AUTHENTICATION_BACKENDS = [
+    'accounts.email_backend.EmailBackend',  # Asegúrate de que la ruta y el nombre de la clase son correctos
+    'django.contrib.auth.backends.ModelBackend',
+]
