@@ -22,18 +22,22 @@
     <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
     <!--custom js-->
     <script src="{% static 'js/especialista.js' %}"></script>
-    
+    <section class="wrapper">
+
+     <section class="main">
+
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <div class="table-responsive">
-                        <table id="'datatable-programmer">
+                        <table id="'datatable-HorariosAtencion" class="table">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>nombre</th>
-                                    <th>fecha</th>
+                                    <th class="centered">#</th>
+                                    <th class="centered">dia de semana</th>
+                                    <th class="centered">fecha</th>
                                 </tr>
+                                <tbody id="tablebody_HorariosAtencion"></tbody>
                             </thead>
                         </table>
                     </div>
@@ -41,6 +45,9 @@
             </div>
         </div>
 
+     </section>    
+
+    </section>
     
     
     

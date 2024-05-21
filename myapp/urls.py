@@ -9,4 +9,5 @@ urlpatterns = [
     path('Especialista/', vista_medico),
     path('Especialista/Perfil/', Vista_EspecialistaPerfil),
     path('Especialista/Lista_de_espera/', Vista_EspecialistaLista),
+    path('Lista_HorariosAtencion/', views.lista_HorariosAtencion, name='lista_HorariosAtencion'),
 ]
