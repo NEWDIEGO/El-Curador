@@ -98,7 +98,3 @@ button:hover, .btn:hover {
 .profile-picture input {
     margin-top: 16px;
 }
-
-
-app = Flask(__name__)
-app.static_folder = 'static'

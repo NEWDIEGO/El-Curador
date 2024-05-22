@@ -1,6 +1,12 @@
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
+from . import views
+from django.contrib.auth import views as auth_views
+
+
 
 
 urlpatterns = [
@@ -28,4 +34,4 @@ urlpatterns = [
     path('especialista/', views.especialista, name='especialista'),
     path('especialista_perfil/', views.especialista_perfil, name='especialista_perfil'),
     path('especialista_lista/', views.especialista_lista, name='especialista_lista'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

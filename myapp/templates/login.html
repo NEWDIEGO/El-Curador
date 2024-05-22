@@ -7,6 +7,9 @@
     <style>
         body {
             background-color: #add8e6; /* Fondo celeste */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .container {
             background-color: #fff;
@@ -16,6 +19,9 @@
             text-align: center;
             max-width: 600px;
             margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         img {
             max-width: 100px;
@@ -23,11 +29,14 @@
         }
         .btn-group {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
         }
         .btn {
-            display: inline-block;
-            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
@@ -35,9 +44,20 @@
             color: #fff;
             text-decoration: none;
             cursor: pointer;
+            width: 100%;
+            text-align: center;
+            font-size: 16px;
         }
         .btn:hover {
             background-color: #0056b3;
+        }
+        footer {
+            margin-top: auto;
+            text-align: center;
+            padding: 10px;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
         }
     </style>
 </head>
@@ -45,29 +65,28 @@
     {% load static %}
     <div class="container">
         <h1 class="text-2xl font-bold mb-6 text-center">Bienvenidos a la clínica "El Curador"</h1>
-        <img src="{% static 'imagenes/logo1.png' %}" alt="Logo">
-        <form action="{% url 'login' %}" method="post">
+        <img src="{{ MEDIA_URL }}imagenes/logo1.png" alt="Logo">
+        <form action="{% url 'login' %}" method="post" style="width: 100%;">
             {% csrf_token %}
-            <div class="mb-4">
+            <div class="mb-4 text-left">
                 <label for="email" class="block text-zinc-700 text-sm font-bold mb-2">Ingrese su Correo Electrónico:</label>
                 <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
-            <div class="mb-6">
+            <div class="mb-6 text-left">
                 <label for="password" class="block text-zinc-700 text-sm font-bold mb-2">Ingrese su Contraseña:</label>
                 <input type="password" id="password" name="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-zinc-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" />
             </div>
-            <div class="flex items-center justify-between mb-6">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Aceptar</button>
-                <a href="{% url 'registrar' %}" class="inline-block bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-center">Registrarse</a>
+            <div class="btn-group mb-6">
+                <button type="submit" class="btn">Aceptar</button>
+                <a href="{% url 'registrar' %}" class="btn bg-zinc-300 hover:bg-zinc-400 text-zinc-800">Registrarse</a>
+                <a href="{% url 'password_reset' %}" class="btn text-blue-500 hover:text-blue-800 bg-transparent">¿Olvido Su Contraseña?</a>
+                <a href="{% url 'ver_inscritos' %}" class="btn">Ver Inscritos</a>
+                <a href="/admin/" class="btn">Entrar como admin</a>
             </div>
-            <p class="text-center text-zinc-500 text-xs">
-                <a href="{% url 'password_reset' %}" class="text-blue-500 hover:text-blue-800">¿Olvido Su Contraseña?</a>
-            </p>
         </form>
-        <div class="btn-group">
-            <a href="{% url 'ver_inscritos' %}" class="btn">Ver Inscritos</a>
-            <a href="/admin/" class="btn">Entrar como admin</a>
-        </div>
     </div>
+    <footer>
+        <p>Contactos: info@elcurador.com | Tel: +123 456 7890</p>
+    </footer>
 </body>
 </html>
