@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Reserva de cita</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'scripts.js' %}"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        form {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ccc;
+        }
+        
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reserva tu cita</h1>
+        <form action="/reservarCita" method="post">
+            <div class="especialistas">
+                <select name="especialista">
+                    <option value="medicina_general">Medicina General</option>
+                    <option value="nutricionista">Nutricionista</option>
+                    <option value="dentista">Dentista</option>
+                </select>
+            </div>
+            <div class="calendario">
+                <!-- Aquí iría tu calendario, posiblemente necesites JavaScript o un plugin -->
+            </div>
+            <div class="horarios">
+                <input type="radio" id="hora1" name="hora" value="9:00">
+                <label for="hora1">9:00</label>
+                <input type="radio" id="hora2" name="hora" value="12:00">
+                <label for="hora2">12:00</label>
+                <input type="radio" id="hora3" name="hora" value="15:00">
+                <label for="hora3">15:00</label>
+                <input type="radio" id="hora4" name="hora" value="18:00">
+                <label for="hora4">18:00</label>
+            </div>
+            <div class="acciones">
+                <button type="submit">Aceptar</button>
+                <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+                <button type="button" onclick="volver()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
