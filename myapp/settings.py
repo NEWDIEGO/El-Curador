@@ -1,21 +1,5 @@
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'myapp',  # Asegúrate de que esto es exactamente igual al nombre de la carpeta de tu app
-    'Aplicaciones.Usuario'
-]
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_mysql',
-        'USER': 'root',
-        'PASSWORD': 'Holamundo-123',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Admin</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Funciones Admin</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card-group">
+                <div class="card">
+                    <a href="{% url 'gestionar_usuarios' %}" class="card-content">
+                        <h2>Gestionar Usuarios</h2>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="{% url 'asignar_horarios' %}" class="card-content">
+                        <h2>Asignar Horarios</h2>
+                    </a>
+                </div>
+                <div class="card">
+                    <a href="{% url 'ver_informes' %}" class="card-content">
+                        <h2>Ver Informes</h2>
+                    </a>
+                </div>
+            </div>
+            <a href="{% url 'logout' %}" class="button logout">Salir</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Curador</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>
