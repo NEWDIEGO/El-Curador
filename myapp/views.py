@@ -39,6 +39,7 @@ def registrar(request):
         contraseña = request.POST['contraseña']
         fechaNacimiento = request.POST['fechaNacimiento']
         genero = request.POST['genero']
+        prevision = request.POST['prevision']
         
         # Crear el usuario
         user = User.objects.create_user(
