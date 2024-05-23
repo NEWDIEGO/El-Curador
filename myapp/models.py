@@ -1,0 +1,38 @@
+from django.db import models
+from django.contrib.auth.models import User
+
+class Paciente(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    fecha_nacimiento = models.DateField()
+
+    def __str__(self):
+        return self.user.username
+
+class Especialista(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    especialidad = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.user.username
+
+class Perfil(models.Model):
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
+    fecha_nacimiento = models.DateField()
+    genero = models.CharField(max_length=10)
+    prevision = models.CharField(max_length=50)
+    comentario = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.usuario.username
+
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Perfil.objects.create(usuario=instance)
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.perfil.save()

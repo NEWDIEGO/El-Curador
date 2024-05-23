@@ -1,19 +1,13 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from django.db import models
 from django.utils.translation import gettext_lazy as _
-
-class Paciente(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-class Especialista(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+from .models import Paciente, Especialista, Perfil  # Importa los modelos necesarios
 
 class PacienteAdmin(admin.ModelAdmin):
-    list_display = ('user', 'fecha_nacimiento')  # Asegúrate de que 'fecha_nacimiento' está definido en el modelo
+    list_display = ('user', 'fecha_nacimiento')
 
 class EspecialistaAdmin(admin.ModelAdmin):
-    list_display = ('user', 'especialidad')  # Asegúrate de que 'especialidad' está definido en el modelo
+    list_display = ('user', 'especialidad')
 
 # Personalización del sitio de administración
 class MyAdminSite(admin.AdminSite):
@@ -32,12 +26,13 @@ admin_site = MyAdminSite(name='myadmin')
 admin_site.register(Paciente, PacienteAdmin)
 admin_site.register(Especialista, EspecialistaAdmin)
 admin_site.register(User)  # Registra User si es necesario
+
+@admin.register(Perfil)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'fecha_nacimiento', 'genero', 'prevision')
+"""
+# Registrar en el admin site predeterminado
 admin.site.register(Paciente, PacienteAdmin)
 admin.site.register(Especialista, EspecialistaAdmin)
-
-class PacienteAdmin(admin.ModelAdmin):
-    pass
-
-
-class EspecialistaAdmin(admin.ModelAdmin):
-    pass
+admin.site.register(Perfil, PerfilAdmin)
+"""

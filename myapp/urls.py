@@ -3,11 +3,6 @@ from . import views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
-from . import views
-from django.contrib.auth import views as auth_views
-
-
-
 
 urlpatterns = [
     path('', views.login_view, name='home'),  # Página principal que redirige al login
@@ -30,8 +25,11 @@ urlpatterns = [
     path('paciente_dashboard/', views.paciente_dashboard, name='paciente_dashboard'),
     path('especialista_dashboard/', views.especialista_dashboard, name='especialista_dashboard'),
     path('paciente_reserva/', views.paciente_reserva, name='paciente_reserva'),
-    path('paciente_perfil/', views.PacientePerfil, name='paciente_perfil'),
+    path('paciente_perfil/', views.paciente_perfil, name='paciente_perfil'),
     path('especialista/', views.especialista, name='especialista'),
     path('especialista_perfil/', views.especialista_perfil, name='especialista_perfil'),
     path('especialista_lista/', views.especialista_lista, name='especialista_lista'),
+
+    # Guardar comentarios
+    path('guardar_comentario/', views.guardar_comentario, name='guardar_comentario'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

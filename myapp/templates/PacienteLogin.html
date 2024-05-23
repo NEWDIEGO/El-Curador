@@ -55,7 +55,7 @@
 <body>
     {% load static %}
     <div class="container">
-        <img src="{% static 'imagenes/logo1.png' %}" alt="Logo">
+        <img src="/media/imagenes/logo1.png" alt="Logo">
         <h1>Bienvenido, {{ nombre_usuario }}</h1>
         <div class="btn-group">
             <a href="{% url 'paciente_perfil' %}" class="btn">Ver Perfil</a>
