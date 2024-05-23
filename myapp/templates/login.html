@@ -65,7 +65,7 @@
     {% load static %}
     <div class="container">
         <h1 class="text-2xl font-bold mb-6 text-center">Bienvenidos a la clínica "El Curador"</h1>
-        <img src="{{ MEDIA_URL }}imagenes/logo1.png" alt="Logo">
+        <img src="/media/imagenes/logo1.png" alt="Logo">
         <form action="{% url 'login' %}" method="post" style="width: 100%;">
             {% csrf_token %}
             <div class="mb-4 text-left">
