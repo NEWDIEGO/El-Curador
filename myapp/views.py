@@ -22,7 +22,13 @@ def login_view(request):
             user = authenticate(request, username=email, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('paciente_dashboard')  # Redirige a la página de perfil del paciente
+                try:
+                    # Intenta acceder al perfil del usuario
+                    user.perfil
+                    return redirect('paciente_dashboard')
+                except Perfil.DoesNotExist:
+                    messages.error(request, 'Usuario no tiene un perfil asociado.')
+                    return redirect('login')
             else:
                 return render(request, 'login.html', {'error': 'Correo electrónico o contraseña incorrecta'})
         except User.DoesNotExist:
@@ -37,16 +43,28 @@ def registrar(request):
         first_name = request.POST['nombre']
         last_name = request.POST['apellidoPaterno'] + ' ' + request.POST['apellidoMaterno']
         email = request.POST['correo']
+        fecha_nacimiento = request.POST['fecha_nacimiento']
+        genero = request.POST['genero']
+        prevision = request.POST['prevision']
         
         try:
             user = User.objects.create_user(username, email, password)
             user.first_name = first_name
             user.last_name = last_name
             user.save()
-            messages.success(request, 'Paciente registrado exitosamente.')  # Agrega un mensaje de éxito
-            return redirect('login')  # Redirige al login
+
+            # Crear perfil asociado
+            Perfil.objects.create(
+                usuario=user,
+                fecha_nacimiento=fecha_nacimiento,
+                genero=genero,
+                prevision=prevision
+            )
+
+            messages.success(request, 'Paciente registrado exitosamente.')
+            return redirect('login')
         except Exception as e:
-            messages.error(request, 'Error al registrar usuario: {}'.format(e))  # Agrega un mensaje de error
+            messages.error(request, 'Error al registrar usuario: {}'.format(e))
 
     return render(request, 'registrar.html')
 
