@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 
+
 class Paciente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     fecha_nacimiento = models.DateField()
@@ -19,10 +20,7 @@ class Especialista(models.Model):
 
 class Perfil(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    fecha_nacimiento = models.DateField(null=True, blank=True)
-    genero = models.CharField(max_length=10, null=True, blank=True)
-    prevision = models.CharField(max_length=50, null=True, blank=True)
-    comentario = models.TextField(blank=True, null=True)
+    fecha_nacimiento = models.DateField(default='2000-01-01')
 
     def __str__(self):
         return self.usuario.username

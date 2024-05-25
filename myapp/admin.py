@@ -1,15 +1,20 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
-from .models import Paciente, Especialista, Perfil  # Importa los modelos necesarios
+from .models import Paciente, Especialista, Perfil
 
+@admin.register(Paciente)
 class PacienteAdmin(admin.ModelAdmin):
     list_display = ('user', 'fecha_nacimiento')
 
+@admin.register(Especialista)
 class EspecialistaAdmin(admin.ModelAdmin):
     list_display = ('user', 'especialidad')
 
-# Personalización del sitio de administración
+@admin.register(Perfil)
+class PerfilAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'fecha_nacimiento')
+
 class MyAdminSite(admin.AdminSite):
     site_header = _('Administración de la Clínica')
     site_title = _('Panel de Administración de la Clínica')
@@ -22,17 +27,7 @@ class MyAdminSite(admin.AdminSite):
 
 admin_site = MyAdminSite(name='myadmin')
 
-# Registro de modelos y administradores
 admin_site.register(Paciente, PacienteAdmin)
 admin_site.register(Especialista, EspecialistaAdmin)
-admin_site.register(User)  # Registra User si es necesario
-
-@admin.register(Perfil)
-class PerfilAdmin(admin.ModelAdmin):
-    list_display = ('usuario', 'fecha_nacimiento', 'genero', 'prevision')
-"""
-# Registrar en el admin site predeterminado
-admin.site.register(Paciente, PacienteAdmin)
-admin.site.register(Especialista, EspecialistaAdmin)
-admin.site.register(Perfil, PerfilAdmin)
-"""
+admin_site.register(User)
+admin_site.register(Perfil, PerfilAdmin)

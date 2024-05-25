@@ -32,4 +32,7 @@ urlpatterns = [
 
     # Guardar comentarios
     path('guardar_comentario/', views.guardar_comentario, name='guardar_comentario'),
+
+    #perfil paciente
+    path('paciente_perfil/', views.paciente_perfil, name='paciente_perfil'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

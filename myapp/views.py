@@ -8,6 +8,8 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
 from .models import Perfil  # Asegúrate de que esta línea esté presente
+from django.urls import reverse
+from django.shortcuts import render, get_object_or_404
 
 def login_view(request):
     if request.method == 'POST':
@@ -38,15 +40,15 @@ def login_view(request):
 
 def registrar(request):
     if request.method == 'POST':
-        username = request.POST['correo']
-        password = request.POST['contraseña']
-        first_name = request.POST['nombre']
-        last_name = request.POST['apellidoPaterno'] + ' ' + request.POST['apellidoMaterno']
-        email = request.POST['correo']
-        fecha_nacimiento = request.POST['fecha_nacimiento']
-        genero = request.POST['genero']
-        prevision = request.POST['prevision']
-        
+        username = request.POST.get('correo')
+        password = request.POST.get('contraseña')
+        first_name = request.POST.get('nombre')
+        last_name = request.POST.get('apellidoPaterno') + ' ' + request.POST.get('apellidoMaterno')
+        email = request.POST.get('correo')
+        fecha_nacimiento = request.POST.get('fecha_nacimiento')
+        genero = request.POST.get('genero')
+        prevision = request.POST.get('prevision')
+
         try:
             user = User.objects.create_user(username, email, password)
             user.first_name = first_name
@@ -62,11 +64,12 @@ def registrar(request):
             )
 
             messages.success(request, 'Paciente registrado exitosamente.')
-            return redirect('login')
+            return redirect(reverse('login'))  # Redirige a la vista de login
         except Exception as e:
             messages.error(request, 'Error al registrar usuario: {}'.format(e))
 
     return render(request, 'registrar.html')
+
 
 @login_required
 def paciente_dashboard(request):
@@ -83,17 +86,18 @@ def paciente_reserva(request):
 
 @login_required
 def paciente_perfil(request):
-    usuario = request.user
-    perfil = usuario.perfil  # Asegúrate de que tienes un perfil relacionado con el usuario
-    context = {
-        'nombre_completo': f"{usuario.first_name} {usuario.last_name}",
-        'fecha_nacimiento': perfil.fecha_nacimiento.strftime("%d/%m/%Y"),
-        'correo': usuario.email,
-        'genero': perfil.genero,
-        'prevision': perfil.prevision,
-        'comentario': perfil.comentario,
+    user = request.user
+    perfil = get_object_or_404(Perfil, usuario=user)
+
+    fecha_nacimiento = perfil.fecha_nacimiento.strftime("%d/%m/%Y") if perfil.fecha_nacimiento else "No especificada"
+
+    contexto = {
+        'nombre_completo': f"{user.first_name} {user.last_name}",
+        'fecha_nacimiento': fecha_nacimiento,
+        'correo': user.email
     }
-    return render(request, 'PacientePerfil.html', context)
+
+    return render(request, 'PacientePerfil.html', contexto)
 
 @csrf_exempt
 @login_required

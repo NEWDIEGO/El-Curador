@@ -179,7 +179,7 @@
             <br><br>
 
             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fechaNacimiento" name="fechaNacimiento" onchange="checkAge()" required>
+            <input type="date" id="fechaNacimiento" name="fecha_nacimiento" onchange="checkAge()" required>
             <br><br>
 
             <label for="genero">Género:</label>
@@ -202,7 +202,7 @@
 
             <button type="submit" id="registrarBtn">Registrar</button>
             <button type="reset">Limpiar</button>
-            <button type="button" onclick="history.back();">Volver</button>
+            <button type="button" onclick="window.location.href='{% url 'login' %}'">Volver</button>
         </form>
     </div>
 </body>
