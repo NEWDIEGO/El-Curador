@@ -1,33 +1,30 @@
 from django.contrib import admin
-from django.contrib.auth.models import User
-from django.utils.translation import gettext_lazy as _
-from .models import Paciente, Especialista, Perfil
+from .models import Cliente, Especialista, Especialidad, Pago, HorariosAtencion, Reserva, HistorialAtencion
 
-@admin.register(Paciente)
-class PacienteAdmin(admin.ModelAdmin):
-    list_display = ('user', 'fecha_nacimiento')
+@admin.register(Cliente)
+class ClienteAdmin(admin.ModelAdmin):
+    list_display = ('usuario', 'nombre', 'apellido_paterno', 'correo')
 
 @admin.register(Especialista)
 class EspecialistaAdmin(admin.ModelAdmin):
-    list_display = ('user', 'especialidad')
+    list_display = ('usuario', 'nombre', 'apellido_paterno', 'especialidad')
 
-@admin.register(Perfil)
-class PerfilAdmin(admin.ModelAdmin):
-    list_display = ('usuario', 'fecha_nacimiento')
+@admin.register(Especialidad)
+class EspecialidadAdmin(admin.ModelAdmin):
+    list_display = ('nombre',)
 
-class MyAdminSite(admin.AdminSite):
-    site_header = _('Administración de la Clínica')
-    site_title = _('Panel de Administración de la Clínica')
-    index_title = _('Panel de Administración')
+@admin.register(Pago)
+class PagoAdmin(admin.ModelAdmin):
+    list_display = ('numero_reserva', 'fecha', 'costo', 'especialista')
 
-    def get_app_list(self, request):
-        app_list = super().get_app_list(request)
-        # Tu lógica personalizada aquí
-        return app_list
+@admin.register(HorariosAtencion)
+class HorariosAtencionAdmin(admin.ModelAdmin):
+    list_display = ('dia_semana', 'fecha', 'hora_inicio', 'hora_fin', 'especialista')
 
-admin_site = MyAdminSite(name='myadmin')
+@admin.register(Reserva)
+class ReservaAdmin(admin.ModelAdmin):
+    list_display = ('nro_reserva', 'agendar_hora', 'estado', 'cliente', 'horario_atencion')
 
-admin_site.register(Paciente, PacienteAdmin)
-admin_site.register(Especialista, EspecialistaAdmin)
-admin_site.register(User)
-admin_site.register(Perfil, PerfilAdmin)
+@admin.register(HistorialAtencion)
+class HistorialAtencionAdmin(admin.ModelAdmin):
+    list_display = ('cliente', 'especialista', 'reserva', 'fecha')

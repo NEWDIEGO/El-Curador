@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Médico</title>
+    <link href="{% static 'css/styleEspecialista.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil Médico</h1>
+        <div class="profile">
+            <div class="profile-picture"></div>
+            <div class="profile-info">
+                <p>Nombre Completo</p>
+                <p>Fecha de Nacimiento</p>
+                <p>Correo Electrónico</p>
+                <p>Especialidad</p>
+                <p>Género</p>
+                <p>Comentario:</p>
+            </div>
+        </div>
+        <a href="javascript:history.back()" class="back-button">
+            <button>Volver</button>
+        </a>
+    </div>
+    <script src="{% static 'js/scriptEspecialista.js' %}"></script>
+</body>
+</html>

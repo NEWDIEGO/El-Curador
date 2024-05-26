@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especialista</title>
+    <link href="{% static 'css/styleEspecialista.css' %}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Inicio</h1>
+        </div>
+    </header>
+    <section class="wrapper">
+        <section class="main">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="{% url 'EspecialistaPerfil' %}" class="bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Ver Perfil
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'EspecialistaLista' %}" class="bg-zinc-300 hover:bg-zinc-400 text-zinc-800 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                            Lista de Espera
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" onclick="history.back();" class="bg-red-300 hover:bg-red-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Cerrar Sesión</button>
+                    </li>
+                </ul>
+            </nav>
+        </section>    
+    </section>
+    <footer>
+        <p>Footer de ejemplo</p>
+    </footer>
+    <script src="{% static 'js/scriptEspecialista.js' %}"></script>
+</body>
+</html>

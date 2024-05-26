@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paciente Login</title>
+    <link href="{% static 'css/stylePaciente.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <img src="{% static 'images/logo1.png' %}" alt="Logo">
+        <h1>Bienvenido, {{ nombre_usuario }}</h1>
+        <div class="btn-group">
+            <a href="{% url 'paciente_perfil' %}" class="btn">Ver Perfil</a>
+            <a href="{% url 'paciente_reserva' %}" class="btn">Reservar Hora</a>
+            <a href="#" class="btn">Ver mis Reservas</a>
+            <a href="#" class="btn">Anular Hora</a>
+            <a href="{% url 'logout' %}" class="btn">Cerrar Sesión</a>
+        </div>
+    </div>
+    <script src="{% static 'js/scriptPaciente.js' %}"></script>
+</body>
+</html>

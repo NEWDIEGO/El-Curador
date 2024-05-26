@@ -1,0 +1,28 @@
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+
+python manage.py runserver
+
+
+.\venv\Scripts\activate
+source venv/bin/activate
+
+
+
+Conectarse a BD sql server:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME': 'Curador',
+        'USER': 'sa',
+        'PASSWORD': 'sasaki222',
+        'HOST': 'localhost',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    }
+}

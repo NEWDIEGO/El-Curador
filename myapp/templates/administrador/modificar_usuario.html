@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Modificar Usuario</title>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Modificar Usuario</h1>
+    </header>
+    <main>
+        <div class="container">
+            <form action="{% url 'modificar_usuario' usuario.id %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="run">RUT:</label>
+                    <input type="text" id="run" name="run" value="{{ usuario.run }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value="{{ usuario.nombre }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido_paterno">Apellido Paterno:</label>
+                    <input type="text" id="apellido_paterno" name="apellido_paterno" value="{{ usuario.apellido_paterno }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellido_materno">Apellido Materno:</label>
+                    <input type="text" id="apellido_materno" name="apellido_materno" value="{{ usuario.apellido_materno }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo:</label>
+                    <input type="email" id="correo" name="correo" value="{{ usuario.correo }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena">
+                </div>
+                <div class="form-group">
+                    <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmar_contrasena">
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Número Telefónico:</label>
+                    <input type="text" id="telefono" name="telefono" value="{{ usuario.telefono }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" value="{{ usuario.fecha_nacimiento|date:'Y-m-d' }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero" required>
+                        <option value="M" {% if usuario.genero == 'M' %}selected{% endif %}>Masculino</option>
+                        <option value="F" {% if usuario.genero == 'F' %}selected{% endif %}>Femenino</option>
+                    </select>
+                </div>
+                <div class="form-group button-group">
+                    <button type="submit" class="btn">Modificar</button>
+                    <button type="button" class="btn" onclick="window.location.href='{% url 'gestionar_usuarios' %}'">Volver</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Curador</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

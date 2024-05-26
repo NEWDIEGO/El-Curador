@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Usuarios Inscritos</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="{% static 'css/styleInicio.css' %}" rel="stylesheet">
 </head>
 <body class="bg-zinc-200 flex items-center justify-center h-screen">
     <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
@@ -28,5 +29,6 @@
             <a href="{% url 'login' %}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Volver al Login</a>
         </div>
     </div>
+    <script src="{% static 'js/scriptInicio.js' %}"></script>
 </body>
 </html>

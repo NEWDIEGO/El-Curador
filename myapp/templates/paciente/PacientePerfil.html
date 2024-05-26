@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link href="{% static 'css/stylePaciente.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Perfil Usuario</h1>
+        <div class="profile">
+            <div class="profile-info">
+                <p>Nombre Completo: {{ nombre_completo }}</p>
+                <p>Fecha de Nacimiento: {{ fecha_nacimiento }}</p>
+                <p>Correo Electrónico: {{ correo }}</p>
+            </div>
+        </div>
+        <div class="button-group">
+            <a href="{% url 'paciente_dashboard' %}" class="button">Volver</a>
+        </div>
+    </div>
+    <script src="{% static 'js/scriptPaciente.js' %}"></script>
+</body>
+</html>

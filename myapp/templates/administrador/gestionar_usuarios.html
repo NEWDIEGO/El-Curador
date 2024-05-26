@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Usuarios</title>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gestionar Usuarios</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="button-group">
+                <a href="{% url 'crear_usuario' %}" class="button">Crear Usuario</a>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RUT</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in usuarios %}
+                        <tr>
+                            <td>{{ usuario.run }}</td>
+                            <td>{{ usuario.nombre }}</td>
+                            <td>{{ usuario.apellido_paterno }} {{ usuario.apellido_materno }}</td>
+                            <td>{{ usuario.correo }}</td>
+                            <td>
+                                <a href="{% url 'modificar_usuario' usuario.id %}" class="button">Modificar</a>
+                                <a href="{% url 'eliminar_usuario' usuario.id %}" class="button">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'menu_admin' %}" class="button">Volver</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Curador</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

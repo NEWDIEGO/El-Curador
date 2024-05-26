@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Espera</title>
+    <link href="{% static 'css/styleEspecialista.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Espera</h1>
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Especialidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Paciente 1</td>
+                        <td>12/12/2023</td>
+                        <td>10:00</td>
+                        <td>Nutricionista</td>
+                        <td>
+                            <button class="btn">Ver</button>
+                            <button class="btn">Cancelar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons">
+            <button onclick="listaView()">Lista</button>
+            <button onclick="gridView()">Grid</button>
+        </div>
+        <a href="javascript:history.back()" class="back-button">Volver</a>
+    </div>
+    <script src="{% static 'js/scriptEspecialista.js' %}"></script>
+</body>
+</html>
