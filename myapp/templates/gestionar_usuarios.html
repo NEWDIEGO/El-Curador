@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestionar Usuarios</title>
+    <link rel="stylesheet" href="{% static 'css/styles2.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Gestionar Usuarios</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="button-group">
+                <a href="{% url 'crear_usuario' %}" class="button">Crear Usuario</a>
+                <a href="{% url 'modificar_usuario' %}" class="button">Modificar Usuario</a>
+            </div>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>RUT</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>12345678-9</td>
+                            <td>Juan</td>
+                            <td>Pérez</td>
+                            <td>juan.perez@example.com</td>
+                            <td>
+                                <a href="#" class="button">Modificar</a>
+                                <a href="#" class="button">Eliminar</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="{% url 'menu_admin' %}" class="button">Volver</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Curador</p>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

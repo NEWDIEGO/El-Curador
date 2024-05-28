@@ -1,0 +1,234 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header and Footer */
+header, footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #4a90e2;
+    color: white;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    width: 100%;
+    max-width: 1200px;
+    margin: 8em auto 2em auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Card Group */
+.card-group {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Card Style */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 1em;
+    padding: 1.5em;
+    width: calc(33% - 2em); /* Adjust width to fit 3 cards in a row with space */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-content {
+    text-decoration: none;
+    color: #4a90e2; /* Changed to match theme */
+}
+
+.card-content h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Button Styles */
+.button-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1em 0;
+}
+
+.button, .btn, button[type="submit"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.75em 1.5em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-decoration: none;
+    margin: 0.5em;
+    min-width: 150px;
+    text-align: center;
+    font-size: 1em;
+}
+
+.button:hover, .btn:hover, button[type="submit"]:hover {
+    background-color: #357ab8;
+    transform: translateY(-2px);
+}
+
+.logout {
+    background-color: #50e3c2;
+}
+
+.logout:hover {
+    background-color: #36b59d;
+}
+
+/* Table Styles */
+.table-container {
+    overflow-x: auto;
+    margin-top: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5em;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 1em;
+    text-align: left;
+}
+
+th {
+    background-color: #4a90e2;
+    color: white;
+}
+
+td .button {
+    background-color: #50e3c2;
+    padding: 0.3em 0.5em;
+}
+
+td .button:hover {
+    background-color: #36b59d;
+}
+
+/* Form Styles */
+.form-group {
+    margin: 1em 0;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    margin-bottom: 1em;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group input {
+    flex: 1;
+}
+
+.input-group button {
+    margin-left: 0.5em;
+}
+
+form .button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5em;
+}
+
+/* Additional Styles */
+.card-header {
+    background-color: #4a90e2;
+    color: white;
+    padding: 1em;
+    border-radius: 8px 8px 0 0;
+    font-size: 1.2em;
+}
+
+.card-content {
+    padding: 2em;
+}
+
+.card-footer {
+    padding: 1em;
+    background-color: #f0f4f8;
+    border-radius: 0 0 8px 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 2em);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: calc(100% - 2em);
+    }
+}
