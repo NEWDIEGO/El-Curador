@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
@@ -53,3 +54,5 @@ urlpatterns = [
 
 
 
+=======
+>>>>>>> 49d2ba33db30c581223f44956457679937d4bd7b
