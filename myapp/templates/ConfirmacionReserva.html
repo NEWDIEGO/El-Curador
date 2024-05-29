@@ -1,0 +1,68 @@
+<!-- ConfirmacionReserva.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .acciones {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: white;
+        }
+        
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Confirmación de Reserva</h1>
+        <p>Número de Reserva: {{ reserva.numero_reserva }}</p>
+        <p>Paciente: {{ reserva.paciente.username }}</p>
+        <p>Especialista: {{ reserva.especialista }}</p>
+        <p>Fecha: {{ reserva.fecha }}</p>
+        <p>Hora: {{ reserva.hora }}</p>
+        <p>Valor de la Consulta: {{ reserva.valor_consulta }}</p>
+
+        <div class="acciones">
+            <button onclick="window.location.href='{% url 'generar_pdf' reserva.numero_reserva %}'">Descargar PDF</button>
+            <button onclick="volver()">Volver al Menú</button>
+        </div>
+    </div>
+    <script>
+        function volver() {
+            window.location.href = '{% url "paciente_dashboard" %}';
+        }
+    </script>
+</body>
+</html>

@@ -10,8 +10,6 @@ urlpatterns = [
     path('logout/', views.logout_view, name='logout'),  # Vista de logout
     path('custom_login/', views.custom_login, name='custom_login'),  # Vista de login personalizada
     path('registrar/', views.registrar, name='registrar'),  # Vista de registro
-    path('ver-inscritos/', views.ver_inscritos, name='ver_inscritos'),  # Vista para ver inscritos
-    
     # URLs para restablecer contraseña
     path('NewPass2/', auth_views.PasswordResetView.as_view(template_name='NewPass.html'), name='password_reset'),
     path('NewPass2_sent/', auth_views.PasswordResetDoneView.as_view(template_name='password_reset_done.html'), name='password_reset_done'),
@@ -32,7 +30,26 @@ urlpatterns = [
 
     # Guardar comentarios
     path('guardar_comentario/', views.guardar_comentario, name='guardar_comentario'),
-
     #perfil paciente
     path('paciente_perfil/', views.paciente_perfil, name='paciente_perfil'),
+    
+    
+    
+    path('ver_inscritos/', views.ver_inscritos, name='ver_inscritos'),
+    
+    #pdf
+    path('generar_pdf/<int:reserva_id>/', views.generar_pdf, name='generar_pdf'),
+    path('confirmacion_reserva/<int:reserva_id>/', views.confirmacion_reserva, name='confirmacion_reserva'),
+
+    # lista de reservas
+    path('paciente_lista_reservas/', views.paciente_lista_reservas, name='paciente_lista_reservas'),
+
+    #anular hora
+    path('paciente_anula_reserva/', views.paciente_anula_reserva, name='paciente_anula_reserva'),
+    path('anular_reserva/', views.anular_reserva, name='anular_reserva'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Anular Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .actions {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Anular Reserva</h1>
+        {% if reservas %}
+        <form method="post" action="{% url 'anular_reserva' %}">
+            {% csrf_token %}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Seleccionar</th>
+                        <th>Número de Reserva</th>
+                        <th>Especialista</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Valor de la Consulta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reservas %}
+                    <tr>
+                        <td><input type="radio" name="reserva_id" value="{{ reserva.numero_reserva }}" required></td>
+                        <td>{{ reserva.numero_reserva }}</td>
+                        <td>{{ reserva.especialidad }} ({{ reserva.especialista }})</td>
+                        <td>{{ reserva.fecha }}</td>
+                        <td>{{ reserva.hora }}</td>
+                        <td>{{ reserva.valor_consulta }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="actions">
+                <button type="button" onclick="window.location.href='{% url 'paciente_dashboard' %}'">Volver</button>
+                <button type="submit" class="btn-danger">Anular Hora</button>
+            </div>
+        </form>
+        {% else %}
+        <p>No tienes reservas.</p>
+        <button type="button" onclick="window.location.href='{% url 'paciente_dashboard' %}'">Volver</button>
+        {% endif %}
+    </div>
+</body>
+</html>

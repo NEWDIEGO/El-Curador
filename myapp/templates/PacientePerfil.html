@@ -46,7 +46,39 @@
         .button:hover {
             background-color: #0056b3;
         }
+        .comment-box {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
     </style>
+    <script>
+        function guardarComentario() {
+            const comentario = document.getElementById('comentario').value;
+            fetch("{% url 'guardar_comentario' %}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}',
+                },
+                body: JSON.stringify({comentario: comentario}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    alert(data.message);
+                } else {
+                    alert(data.error);
+                }
+            });
+        }
+
+        function limpiarComentario() {
+            document.getElementById('comentario').value = '';
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -57,9 +89,12 @@
                 <p>Fecha de Nacimiento: {{ fecha_nacimiento }}</p>
                 <p>Correo Electrónico: {{ correo }}</p>
             </div>
+            <textarea id="comentario" class="comment-box" placeholder="Escribe tu comentario aquí...">{{ comentario }}</textarea>
         </div>
         <div class="button-group">
-            <a href="{% url 'paciente_perfil' %}" class="button">Volver</a>
+            <button onclick="guardarComentario()" class="button">Guardar</button>
+            <button onclick="limpiarComentario()" class="button">Limpiar</button>
+            <a href="{% url 'paciente_dashboard' %}" class="button">Volver</a>
         </div>
     </div>
 </body>
