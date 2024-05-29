@@ -1,0 +1,385 @@
+[33mcommit 3806bc23e7c37e0beaa9b847670a2825ca51fb42[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 28 22:53:37 2024 -0400
+
+    cambios listos
+
+[33mcommit 43e5a085e1db48d1605a035474aeeed7b4f01258[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 28 22:51:20 2024 -0400
+
+    sasa
+
+[33mcommit 3ae1f60dc3a0dcdc9854a5419862cf0ecc68718f[m
+Merge: 3a562bf 49d2ba3
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 28 22:50:39 2024 -0400
+
+    Resolved merge conflicts
+
+[33mcommit 3a562bf2f1a8a5829f79bccdab6a3cd673080717[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 28 22:44:24 2024 -0400
+
+    perfil de paciente LISTO
+
+[33mcommit 49d2ba33db30c581223f44956457679937d4bd7b[m[33m ([m[1;31morigin/El-Curador-28/05[m[33m)[m
+Merge: 1c90ee4 bc48075
+Author: PAAWSA03LC0502 <di.medina@duocuc.cl>
+Date:   Mon May 27 20:40:06 2024 -0400
+
+    resueltyo
+
+[33mcommit 1c90ee42e5dab503393bd16091b5fb7988134e71[m
+Author: PAAWSA03LC0502 <di.medina@duocuc.cl>
+Date:   Mon May 27 20:12:17 2024 -0400
+
+    duoc web listo
+
+[33mcommit bc48075e3d572d52009fac59ce44269f339feb09[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Mon May 27 18:16:33 2024 -0400
+
+    pacientelogin 1
+
+[33mcommit 0e0d71446b4795469e30c89d507a3ec03da86c95[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Mon May 27 09:20:57 2024 -0400
+
+    migrations completados
+
+[33mcommit da9a3b19d97ccd544358bf01f953ef5240199ab4[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Mon May 27 08:45:51 2024 -0400
+
+    migrations 1
+
+[33mcommit f3bd488dc3ab1e6466932b4b4d798facaf2aa3ef[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 24 23:52:22 2024 -0400
+
+    revision 1
+
+[33mcommit b5a31200b94aec19a528574d85efc21c95ca5ac7[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 23 23:02:15 2024 -0400
+
+    admin 1
+
+[33mcommit f0b678dd785c01a762e5430fa711b059fdf2e952[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 23 13:04:46 2024 -0400
+
+    revisar login
+
+[33mcommit 071ce296835686ff28d7103a90ce63c015d6f5cc[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 23 10:18:26 2024 -0400
+
+    imagen lista
+
+[33mcommit 1bb8e134494fcd746bd4a09c0ad50c1f67ab53fd[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 22 17:53:37 2024 -0400
+
+    imagen
+
+[33mcommit 5a3cb45db84e2c3ecf7f8715e7b6758a7a0dbec9[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 22 17:40:17 2024 -0400
+
+    cambios imagen 2
+
+[33mcommit fa9769f033133021c9af8af43b6e8c3ff3e0b9fe[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 22 13:57:57 2024 -0400
+
+    cambios imagen
+
+[33mcommit d0c2a080eed095f0b1ea8da6a319cc8da9ef901a[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 22 10:07:28 2024 -0400
+
+    revisar
+
+[33mcommit 0140180718752c4c07f2cf5f30aaaa581c027cdc[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 21 23:12:15 2024 -0400
+
+    cambios listos 7
+
+[33mcommit 0dc85ad1ed79ebf489880fce7dc5cd559dbd53e9[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 21 20:14:56 2024 -0400
+
+    cambios 5
+
+[33mcommit 932dcf50676da050eae062b33bd6cd7571e5e322[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 17 20:35:37 2024 -0400
+
+    viernes 17/mayo
+
+[33mcommit fd14c1bda2ae13a58784a50da98fbad0dbea7e0c[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 17 20:35:20 2024 -0400
+
+    viernes 17/mayo
+
+[33mcommit 1a25c3b36dd7042e896b62bf66402ec8edb4bba8[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 17 12:07:41 2024 -0400
+
+    mejoras listas
+
+[33mcommit 14a18e190ab237830f4b69768b2bc6cae00d562f[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 16 22:48:34 2024 -0400
+
+    modificado 3
+
+[33mcommit b7341175ab6a300f1d4718aa5e02471edd034592[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 16 18:24:35 2024 -0400
+
+    asd
+
+[33mcommit 8258b1a082cf01f613e802e0ae6e92b57fbfe6fc[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 16 16:33:29 2024 -0400
+
+    modificacion 1
+
+[33mcommit 6200d8ec9a033822a6552761480f8226ca57f698[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 15 20:01:29 2024 -0400
+
+    guardado con exito 5
+
+[33mcommit 32b243907cd94343957b8a25aa530329c01d54e8[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 15 20:01:15 2024 -0400
+
+    guardado con exito 3
+
+[33mcommit 10ee6ac74d67eb5a709df54dada2df6f012c8066[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 15 11:51:38 2024 -0400
+
+    asas
+
+[33mcommit ceaac51ec2560958543ba28de0d1067a6cd4f2a1[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 15 11:50:32 2024 -0400
+
+    avances listos
+
+[33mcommit 60ef3b11516cb0da4abcb397731e0bb64d9ac33a[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 15 01:48:55 2024 -0400
+
+    Perfil Paciente Listo
+
+[33mcommit 771e1920b7bc7b3538e25b313942431d8858addd[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 22:51:17 2024 -0400
+
+    guardar
+
+[33mcommit 829ebd8124279df77eeeb734484c1ca795bd30ee[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 19:00:01 2024 -0400
+
+    opcion paciente
+
+[33mcommit d51388898d466a6d848330c27218a9ce86830b24[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 18:56:53 2024 -0400
+
+    asas
+
+[33mcommit 5b4e0f47e008017463a825caaf4783e724816ad0[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 18:56:22 2024 -0400
+
+    paciente login listo
+
+[33mcommit adcab32f216bd2d6177e9aa5dc80c51af0f5dfea[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 13:03:59 2024 -0400
+
+    paciente 2 listo
+
+[33mcommit 3b190450cb4ca76f521a352c4f44f6bb4c62c6b8[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 14 11:47:07 2024 -0400
+
+    paso 1 listo
+
+[33mcommit 3c0b856cf795f27ea64d6be9c0efe30f2fb903c9[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Mon May 13 22:48:18 2024 -0400
+
+    new pass
+
+[33mcommit 809dc21fdc33d921331925eb8a4055390763341a[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 11 00:25:50 2024 -0400
+
+    asdsad
+
+[33mcommit 3cae99176cfa160e74635cf50e7fcfd79d66c236[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 10 13:26:45 2024 -0400
+
+    guardar registro
+
+[33mcommit 9516c8d724b4a70b1403b2feccbf5cbeaeca34c0[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 10 12:30:08 2024 -0400
+
+    register 2
+
+[33mcommit 3458aa103f6c8d13cb8205eb446cfd8bd6c59d57[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 10 00:36:02 2024 -0400
+
+    cambios url
+
+[33mcommit 6c56c54cc60bc6c7f94169d68f587830845e3fae[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 9 23:21:13 2024 -0400
+
+    login con exito
+
+[33mcommit 46ee36b8cd653028a0231d917e2c5d06057f3570[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 9 22:48:20 2024 -0400
+
+    guardar 3
+
+[33mcommit af51bc32b1a6743c29167ce029c583ebd182cb51[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 9 18:38:43 2024 -0400
+
+    new commit
+
+[33mcommit 441aedc241d028dec2b62835b5be9be0837e33c9[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Thu May 9 08:58:53 2024 -0400
+
+    wqw
+
+[33mcommit 715f38cd3b3d29e718732947db64a146432c3fdb[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 8 18:49:01 2024 -0400
+
+    guardado hoy
+
+[33mcommit 7557a99093c5087f974c901e6789296265c9f7d8[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 8 10:10:39 2024 -0400
+
+    cambios listos
+
+[33mcommit 255475fbd5bd4c0c18918e0a8b2b254b7b254f6a[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 8 08:47:20 2024 -0400
+
+    Pagina web con exito
+
+[33mcommit b356c4deb46c3ce0e9c2a5bf714499cedc889763[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Wed May 8 00:07:50 2024 -0400
+
+    cambios que revisar
+
+[33mcommit a9d57062561626c79e6e4d748e483d7996ef1fb1[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 7 23:18:50 2024 -0400
+
+    guardar archivos 4
+
+[33mcommit 58c5385a922ec9bd0f84a4fe00000e1a6ebe3e0d[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 7 22:13:53 2024 -0400
+
+    cambios listos 3
+
+[33mcommit 2054a3acb2da0748e0c90a60146a0fa966504fee[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 7 22:02:44 2024 -0400
+
+    cambios 2
+
+[33mcommit 5a7c358f874075a5c77dff117337a6ad3d50efb5[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Tue May 7 21:15:59 2024 -0400
+
+    cambios guardados 2
+
+[33mcommit 212cc8af4ed9fc7ae7904f77fe8e4f66dce46d9c[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 4 16:33:35 2024 -0400
+
+    portada agregada
+
+[33mcommit da55ed1864d9ff2669e2717a7d070da002ae97f6[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 4 11:29:25 2024 -0400
+
+    django agregado
+
+[33mcommit 057f3ca2baea1babcd9466712ebaf3c375ca763f[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 4 10:41:56 2024 -0400
+
+    conectar a base de datos
+
+[33mcommit 1fd288d918d612af48d7e6c1a32ea14487920e43[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 4 09:26:18 2024 -0400
+
+    cambios
+
+[33mcommit a127a9dec9de0df25c3cc4e6ae8d5e001f071122[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Sat May 4 09:16:42 2024 -0400
+
+    cambios
+
+[33mcommit c74bb769857f5e1cbf99293608775923a730e845[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 21:39:16 2024 -0400
+
+    cambio realizado
+
+[33mcommit eff81f7764f91047e2116fcdbb3becc213269e51[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 21:33:34 2024 -0400
+
+    CAMBIO REALIZADO
+
+[33mcommit 7f9ec3ca492049cc4c6199eb3c26d6f875b319b5[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 21:31:39 2024 -0400
+
+    cuarto commit
+
+[33mcommit 2cd2d00daef205996f9b80efd6325742ac7aab28[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 21:31:19 2024 -0400
+
+    tercer commit
+
+[33mcommit 7b5f5a176f55f6d2b66819e68a92b8db70dbde72[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 21:03:03 2024 -0400
+
+    index y propuesta
+
+[33mcommit e5acb77618cc2d7b039be2b86ee4a2f8d835c8b3[m
+Author: NEWDIEGO <di.medina@duocuc.cl>
+Date:   Fri May 3 07:06:50 2024 -0400
+
+    Primer Commit

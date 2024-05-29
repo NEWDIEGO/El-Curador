@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ingrese su nueva contraseña</title>
+    <style>
+        /* Mismo estilo que newpass.html */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ingrese su nueva contraseña</h2>
+        <form method="post" action="{% url 'process_newpass3' %}">
+            {% csrf_token %}
+            <label for="password1">Ingrese su nueva contraseña:</label>
+            <input type="password" id="password1" name="password1" required>
+            <label for="password2">Ingrese nuevamente su contraseña:</label>
+            <input type="password" id="password2" name="password2" required>
+            <div class="buttons">
+                <button type="submit" class="accept">Aceptar</button>
+                <button type="button" class="cancel" onclick="window.location.href='{% url 'login' %}'">Volver</button>
+            </div>
+        </form>
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
