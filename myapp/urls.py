@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from django.urls import path, include
 from . import views
 from django.contrib.auth import views as auth_views
@@ -49,10 +49,3 @@ urlpatterns = [
     path('paciente_anula_reserva/', views.paciente_anula_reserva, name='paciente_anula_reserva'),
     path('anular_reserva/', views.anular_reserva, name='anular_reserva'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-
-
-
-
-=======
->>>>>>> 49d2ba33db30c581223f44956457679937d4bd7b
