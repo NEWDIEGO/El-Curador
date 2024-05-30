@@ -11,5 +11,5 @@ function verLista() {
 }
 
 function CerrarSesion() {
-    window.location.href = '/app/';
+    window.location.href = '//';
 }
