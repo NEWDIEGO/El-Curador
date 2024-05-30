@@ -61,3 +61,4 @@ def lista_HorariosAtencion(_request):
     lista_HorariosAtencion= list(HorariosAtencion.objects.values())
     data={'HorariosAtencion': lista_HorariosAtencion}
     return JsonResponse(data)
+
