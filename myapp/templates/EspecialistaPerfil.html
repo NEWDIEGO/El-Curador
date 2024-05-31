@@ -12,6 +12,9 @@
    <link rel="stylesheet" href="{% static 'css/especialista.css' %}">
     <!--custom js-->
     <script src="{% static 'js/especialista.js' %}"></script>
+
+
+
   
 </head>
 <body>
@@ -31,10 +34,37 @@
                             <H1>Perfil</H1>
                         </div>
                     </header>
-
-
-                        <div> 	
+                        
+                    <body>
+                        <div class="profile-container">
+                            <img src="ruta/a/tu/imagen.jpg" alt="Imagen de perfil" class="profile-img">
+                            <div class="profile-info">
+                                <div class="profile-field">
+                                    <label for="nombre">Nombre Completo:</label>
+                                    <input type="text" id="nombre" value="Juan Pérez" readonly>
+                                </div>
+                                <div class="profile-field">
+                                    <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                                    <input type="date" id="fecha-nacimiento" value="1990-01-01" readonly>
+                                </div>
+                                <div class="profile-field">
+                                    <label for="correo">Correo Electrónico:</label>
+                                    <input type="email" id="correo" value="juan@example.com" readonly>
+                                </div>
+                                <div class="profile-field">
+                                    <label for="especialista">Especialista:</label>
+                                    <input type="text" id="especialista" value="Médico Especialista" readonly>
+                                </div>
+                                <div class="profile-field">
+                                    <label for="comentario">Comentario:</label>
+                                    <textarea id="comentario" rows="4" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo libero vel purus pharetra, eget vestibulum tortor lacinia.</textarea>
+                                </div>
+                                <div class="button-container">
+                                    <input class="button" type="button" value="Volver" onClick="Notificar()">
+                                </div>
+                            </div>
                         </div>
+
                 </div>
             </div>
 

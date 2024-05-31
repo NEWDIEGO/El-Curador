@@ -56,3 +56,38 @@ th {
     text-align: center !important;
     vertical-align: middle !important;
 }
+
+
+      /* Estilos CSS */
+      .profile-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: flex;
+        align-items: center; /* Alinear elementos verticalmente */
+    }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 10px; /* Redondear las esquinas para que la imagen parezca cuadrada */
+        margin-right: 20px; /* Espacio entre la imagen y el resto de los campos */
+    }
+    .profile-info {
+        flex-grow: 1; /* Permitir que este div crezca para ocupar el espacio restante */
+    }
+    .profile-field {
+        margin-bottom: 10px;
+    }
+    .profile-field label {
+        display: block; /* Mostrar las etiquetas en una línea nueva */
+        font-weight: bold;
+        color: #007acc;
+
+    }
+    .profile-field input, .profile-field textarea {
+        width: 100%; /* Hacer que los campos de entrada ocupen todo el ancho disponible */
+        box-sizing: border-box; /* Incluir padding y borde en el ancho total */
+    }
+    

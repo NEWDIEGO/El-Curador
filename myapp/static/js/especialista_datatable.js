@@ -65,7 +65,7 @@ const list_HorariosAtencion = async () => {
                 <td>${HorariosAtencion.hora_fin}</td>
                 <td>${HorariosAtencion.duracion_cita}</td>
                 <td>
-                <input class="btn btn-sm btn-primary" type="button" value="Notificar" onClick="verLista()"></input>
+                <input class="btn btn-sm btn-primary" type="button" value="Notificar" onClick="IrNotificar()"></input>
             </td>
             </tr>
             `
@@ -79,19 +79,3 @@ const list_HorariosAtencion = async () => {
 window.addEventListener("load", async () => {
     await initDataTable();
 })
-
-function volverEspecialista(){
-    window.location.href = '/Especialista';
-}
-
-function verPerfil() {
-    window.location.href = '/Especialista/Perfil/';
-}
-
-function verLista() {
-    window.location.href = '/Especialista/Lista_de_espera/';
-}
-
-function CerrarSesion() {
-    window.location.href = '/app/';
-}

@@ -57,6 +57,21 @@ def Vista_EspecialistaLista(request):
     documento = template.render(contexto)
     return HttpResponse(documento)
 
+def Vista_EspecialistaNotificar(request):
+    plantilla_ext = open("myapp\Templates\EspecialistaNotificar.html")
+
+    
+    template = Template(plantilla_ext.read())
+    
+    plantilla_ext.close()
+
+    contexto = Context()
+
+  
+    documento = template.render(contexto)
+    return HttpResponse(documento)
+
+
 def lista_HorariosAtencion(_request):
     lista_HorariosAtencion= list(HorariosAtencion.objects.values())
     data={'HorariosAtencion': lista_HorariosAtencion}
