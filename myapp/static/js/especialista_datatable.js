@@ -4,8 +4,8 @@ let dataTableIsInitialized = false;
 const dataTableOptions = {
     columnDefs: [
         { className: 'centered', targets: [0, 1, 2, 3, 4, 5] },
-        { orderable: false, targets: [3, 4, 5, 6] },
-        { searchable: false, targets: [6] }
+        { orderable: false, targets: [4, 5] },
+        { searchable: false, targets: [4] }
     ],
     language: {
         "sProcessing": "Procesando...",
@@ -51,25 +51,23 @@ const initDataTable = async () => {
 
 const list_HorariosAtencion = async () => {
     try {
-        const response = await fetch("http://127.0.0.1:8000/Lista_HorariosAtencion/")
+        const response = await fetch("http://127.0.0.1:8000/Lista_HorariosAtencion/");
         const data = await response.json();
 
         let content = ``;
-        data.HorariosAtencion.forEach((HorariosAtencion) => {
+        data.HorariosAtencion.forEach((item) => {
             content += `
             <tr>
-                <td>${HorariosAtencion.id_horario_atencion}</td>
-                <td>${HorariosAtencion.dia_semana}</td>
-                <td>${HorariosAtencion.fecha}</td>
-                <td>${HorariosAtencion.hora_inicio}</td>
-                <td>${HorariosAtencion.hora_fin}</td>
-                <td>${HorariosAtencion.duracion_cita}</td>
-                <td>
-                <input class="btn btn-sm btn-primary" type="button" value="Notificar" onClick="IrNotificar()"></input>
-            </td>
+                <td>${item.nro_reserva}</td>
+                <td>${item.nombre_completo_cliente}</td>
+                <td>${item.fecha}</td>
+                <td>${item.dia_semana}</td>
+                <td>${item.agendar_hora}</td>
+                <td> <input class="btn btn-sm btn-primary" type="button" value="Notificar" onClick="IrNotificar(${item.nro_reserva})"> </input></td>
+                
             </tr>
-            `
-        })
+            `;
+        });
         document.getElementById('tablebody_HorariosAtencion').innerHTML = content;
     } catch (ex) {
         alert(ex);
@@ -78,4 +76,6 @@ const list_HorariosAtencion = async () => {
 
 window.addEventListener("load", async () => {
     await initDataTable();
-})
+});
+               
+    

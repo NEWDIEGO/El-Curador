@@ -60,7 +60,7 @@
                             </div>
                             <div class="profile-field">
                                 <label for="comentario">Comentario:</label>
-                                <textarea id="comentario" rows="4" readonly>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo libero vel purus pharetra, eget vestibulum tortor lacinia.</textarea>
+                                <textarea id="comentario" rows="4" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed commodo libero vel purus pharetra, eget vestibulum tortor lacinia.</textarea>
                             </div>
 
                             <div class="button-container">
@@ -74,7 +74,18 @@
                     
                     
                 </div>
+                {% for data in combined_data %}
+                <li> 
+                    <strong>Pago ID:</strong> {{ data.id_pago }}<br>
+                    <strong>Número de Reserva:</strong> {{ data.reserva_nro }}<br>
+                    <strong>Fecha de Pago:</strong> {{ data.fecha_pago }}<br>
+                    <strong>Costo:</strong> {{ data.costo }}<br>
+                    <strong>Nombre del Técnico:</strong> {{ data.tecnico_nombre }}<br>
+                    <strong>Estado de la Reserva:</strong> {{ data.estado_reserva }}<br>
+                </li>
+            {% endfor %}
             </div>
+         
 
             <footer>
                 <p>Footer de ejemplo</p>

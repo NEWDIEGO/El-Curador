@@ -171,10 +171,10 @@ class HorariosAtencion(models.Model):
 
 class Pago(models.Model):
     id_pago = models.IntegerField(primary_key=True)
-    numero_reserva = models.IntegerField(blank=True, null=True)
     fecha = models.DateField(blank=True, null=True)
     costo = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
     id_tecnico = models.ForeignKey('Tecnico', models.DO_NOTHING, db_column='id_tecnico', blank=True, null=True)
+    id_reserva = models.ForeignKey('Reserva', models.DO_NOTHING, db_column='id_reserva', blank=True, null=True)
 
     class Meta:
         managed = False

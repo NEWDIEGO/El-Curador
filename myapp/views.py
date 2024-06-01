@@ -1,7 +1,7 @@
 from django.http import HttpResponse, JsonResponse
-from django.template import Template, Context
-from .models import HorariosAtencion
-
+from django.shortcuts import render
+from django.template import Template, Context   
+from .models import HorariosAtencion,Pago, Reserva, Tecnico,Cliente
 # Create your views here.
 def hello(request): 
     return HttpResponse("<h1>Hello World</h1>")
@@ -71,9 +71,19 @@ def Vista_EspecialistaNotificar(request):
     documento = template.render(contexto)
     return HttpResponse(documento)
 
+def lista_HorariosAtencion(request):
+    reservas = Reserva.objects.select_related('id_cliente', 'id_horario_atencion').all()
 
-def lista_HorariosAtencion(_request):
-    lista_HorariosAtencion= list(HorariosAtencion.objects.values())
-    data={'HorariosAtencion': lista_HorariosAtencion}
-    return JsonResponse(data)
+    data = []
+    for reserva in reservas:
+        item = {
+            'nro_reserva': reserva.nro_reserva,
+            'nombre_completo_cliente': f"{reserva.id_cliente.nombre} {reserva.id_cliente.apellido_paterno} {reserva.id_cliente.apellido_materno}",
+            'fecha': reserva.id_horario_atencion.fecha,
+            'dia_semana': reserva.id_horario_atencion.dia_semana,
+            'agendar_hora': reserva.agendar_hora.strftime("%H:%M"),
+            
+        }
+        data.append(item)
 
+    return JsonResponse({'HorariosAtencion': data})
